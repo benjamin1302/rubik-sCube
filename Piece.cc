@@ -22,30 +22,43 @@ public :
         this->z      = z;
     }
 
-    int getX()
-    {
-        return this->x;
+    //  GETTERS  \\
+
+    int getHaut() const {
+        return haut;
     }
 
-    int getY()
-    {
-        return this->y;
+    int getGauche() const {
+        return gauche;
     }
 
-    int getHaut()
-    {
-        return this->haut;
+    int getZ() const {
+        return z;
     }
 
-    int getGauche()
-    {
-        return this->gauche;
+    int getY() const {
+        return y;
     }
 
-    int getZ()
-    {
-        return this->z;
+    // SETTERS \\
+
+    void setX(int x) {
+        Piece::x = x;
     }
+
+    void setY(int y) {
+        Piece::y = y;
+    }
+
+    void setZ(int z) {
+        Piece::z = z;
+    }
+
+    void setHaut(int haut) {
+        Piece::haut = haut;
+    }
+
+
 
 
 };
