@@ -2,24 +2,30 @@
 #include <string>
 
 using namespace std;
+
+#define WHITE 1
+#define BLUE 2
+#define RED 3
+#define ORANGE 4
+#define GREEN 5
+#define YELLOW 6
+
 // Object : Piece
 // Action ; définit les piece qui compoose le cube
 class Piece {
 private:
-    int x;
-    int y;
-    int z;
     int haut;
     int gauche;
+    int face;
+    string name;
 
 public :
-    Piece(int x, int y, int z, int haut, int gauche)
+    Piece(string name, int face, int haut, int gauche)
     {
         this->gauche = gauche;
         this->haut   = haut;
-        this->x      = x;
-        this->y      = y;
-        this->z      = z;
+        this->face   = face;
+        this->name   = name;
     }
 
     //  GETTERS  \\
@@ -28,37 +34,36 @@ public :
         return haut;
     }
 
-    int getGauche() const {
+    int getGauche()  {
         return gauche;
     }
 
-    int getZ() const {
-        return z;
+    int getFace()
+    {
+        return this->face;
     }
 
-    int getY() const {
-        return y;
+    string getName() {
+        return name;
     }
 
     // SETTERS \\
 
-    void setX(int x) {
-        Piece::x = x;
+    void setGauche(int gauche) {
+        this->gauche = gauche;
     }
 
-    void setY(int y) {
-        Piece::y = y;
-    }
-
-    void setZ(int z) {
-        Piece::z = z;
+    void setFace(int face) {
+        this->face = face;
     }
 
     void setHaut(int haut) {
-        Piece::haut = haut;
+       this->haut = haut;
     }
 
-
+    void setName(string name) {
+       this->name = name;
+    }
 
 
 };
