@@ -8,7 +8,7 @@ void initGL() {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
     glClearDepth(1.0f);                   // Set background depth to farthest
     glEnable(GL_DEPTH_TEST);   // Enable depth testing for z-culling
-    glDepthFunc(GL_LEQUAL);    // Set the type of depth-test
+    //glDepthFunc(GL_LEQUAL);    // Set the type of depth-test
     glShadeModel(GL_SMOOTH);   // Enable smooth shading
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // Nice perspective corrections
 }
@@ -45,12 +45,12 @@ void reshape(GLsizei width, GLsizei height) {  // GLsizei for non-negative integ
 /* Main function: GLUT runs as a console application starting at main() */
 int main(int argc, char** argv) {
     glutInit(&argc, argv);            // Initialize GLUT
-    glutInitDisplayMode(GLUT_DOUBLE); // Enable double buffered mode
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(640, 480);   // Set the window's initial width & height
     glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
     glutCreateWindow(title);          // Create window with the given title
-    glutDisplayFunc(display);       // Register callback handler for window re-paint event
-    glutReshapeFunc(reshape);       // Register callback handler for window re-size event
+    //glutDisplayFunc(display);       // Register callback handler for window re-paint event
+    //glutReshapeFunc(reshape);       // Register callback handler for window re-size event
     initGL();                       // Our own OpenGL initialization
     glutMainLoop();                 // Enter the infinite event-processing loop
     return 0;

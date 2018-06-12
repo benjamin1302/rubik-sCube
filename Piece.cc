@@ -17,15 +17,30 @@ private:
     int haut;
     int gauche;
     int face;
+    int droite;
+    int arriere;
+    int bas;
+    float x;
+    float y;
+    float z;
     string name;
 
 public :
-    Piece(string name, int face, int haut, int gauche)
+    Piece(string name,
+          int face, int haut, int gauche,int droite,int bas,int arriere, float x, float y, float z
+    )
     {
         this->gauche = gauche;
         this->haut   = haut;
         this->face   = face;
+        this->droite = 7-gauche;
+        this->bas = 7-haut;
+        this->arriere = 7-face;
         this->name   = name;
+        this->x      = x;
+        this->y      = y;
+        this->z      = z;
+
     }
 
     //  GETTERS  \\
@@ -42,10 +57,38 @@ public :
     {
         return this->face;
     }
+    int getBas() const {
+        return bas;
+    }
+
+    int getDroite()  {
+        return droite;
+    }
+
+    int getArriere()
+    {
+        return this->arriere;
+    }
 
     string getName() {
         return name;
     }
+
+    float getX()
+    {
+        return this->x;
+    }
+
+    float getY()
+    {
+        return this->y;
+    }
+
+    float getZ()
+    {
+        return this->z;
+    }
+
 
     // SETTERS \\
 
@@ -61,9 +104,24 @@ public :
        this->haut = haut;
     }
 
+    void setDroite(int droite) {
+        this->droite = droite;
+    }
+
+    void setArriere(int arriere) {
+        this->arriere = arriere;
+    }
+
+    void setBas(int bas) {
+        this->bas = bas;
+    }
+
     void setName(string name) {
        this->name = name;
     }
+
+
+
 
 
 };
